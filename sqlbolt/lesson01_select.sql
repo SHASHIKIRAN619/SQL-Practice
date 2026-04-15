@@ -25,3 +25,7 @@
 -- Task 5: Find all the information about each film 
 -- --------------------------------------------
   SELECT * from movies;
+---- ------------------------------------------------------------
+ -- Extra Practice: Find id, title, year from Movies table
+-- ---------------------------------------------------------------
+  SELECT id, title, year from movies;
