@@ -22,7 +22,7 @@
 -- --------------------------------------------
   SELECT title, year from movies;
 ---- --------------------------------------------
--- Task 5: Find all the information about each film 
+-- Task 5: Find all the information about each film
 -- --------------------------------------------
   SELECT * from movies;
 ---- ------------------------------------------------------------
