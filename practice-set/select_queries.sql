@@ -44,4 +44,35 @@ INSERT INTO employees VALUES
 -- ===============================================================
    SELECT name, city from employees where salary < 50000;
 -- ================================================================
--- Task 7:
+-- Task 7: Show all unique departments
+-- ================================================================
+   SELECT distinct department from employees;
+-- ================================================================
+-- Task 8: Show unique cities
+-- ================================================================
+   SELECT distinct city from employees;
+-- ================================================================
+-- Task 9: Show unique salary values
+-- ================================================================
+   SELECT distinct salary from employees
+-- ================================================================
+-- Task 10: Show unique combinations of department and city
+-- ================================================================
+   SELECT distinct department,city from employees;
+-- ================================================================
+-- Task 11: Count number of distinct departments
+-- ================================================================
+   SELECT count(distinct department) from employees;
+-- ================================================================
+-- Task 12: Count number of distinct cities
+-- ===============================================================
+   SELECT count(distinct city) from employees;
+-- ===============================================================
+-- Task 13: Show distinct departments where salary > 40000
+-- ===============================================================
+   SELECT distinct department from employees where salary > 40000;
+-- ===============================================================
+-- Task 14: Show distinct cities for IT department
+-- ===============================================================
+   SELECT distinct city from employees where department = 'IT';
+-- ===============================================================
