@@ -1,3 +1,9 @@
+-- =================================================
+-- SQLBolt Lesson 3: Queries With Constraints (pt_2)
+-- =================================================
+
+-- Table: movies
+-- Columns: id, title, director, year, length_minutes
 ---- --------------------------------------------
 -- Task 1: Find all the Toy Story movies
 -- --------------------------------------------
