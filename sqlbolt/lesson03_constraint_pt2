@@ -1,0 +1,17 @@
+---- --------------------------------------------
+-- Task 1: Find all the Toy Story movies
+-- --------------------------------------------
+ SELECT * from movies where Title like 'Toy%'; 
+---- ----------------------------------------------------
+-- Task 2: Find all the movies directed by John Lasseters
+-- ------------------------------------------------------
+ SELECT * from movies where director= 'John Lasseters'; 
+---- ----------------------------------------------------------------------
+-- Task 3: Find all the movies (and director) not directed by John Lasseter 
+-- ------------------------------------------------------------------------
+ SELECT title, director from movies where director <> 'John Lasseter';
+---- --------------------------------------------
+-- Task 4: Find all the WALL-* movies
+-- --------------------------------------------
+ SELECT * from movies where title like 'WALL%';
+
