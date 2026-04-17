@@ -1,3 +1,9 @@
+-- =================================================
+-- SQLBolt Lesson 2: Queries with Constraints (pt-1)
+-- =================================================
+
+-- Table: movies
+-- Columns: id, title, director, year, length_minutes
 ---- --------------------------------------------
 -- Task 1: Find the movie with a row id of 6
 -- --------------------------------------------
