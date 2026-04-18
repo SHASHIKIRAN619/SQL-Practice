@@ -71,8 +71,38 @@ INSERT INTO employees VALUES
 -- Task 13: Show distinct departments where salary > 40000
 -- ===============================================================
    SELECT distinct department from employees where salary > 40000;
+-- ================================================================
 -- ===============================================================
 -- Task 14: Show distinct cities for IT department
 -- ===============================================================
    SELECT distinct city from employees where department = 'IT';
 -- ===============================================================
+-- Task 15: Show all employees whose name starts with 'A'
+-- ================================================================
+   SELECT * from employees where name like 'A%';
+-- ===================================================================
+-- Task 16: Show employees whose salary is between 30,000 and 50,000
+-- ===================================================================
+   SELECT * from employees where salary between 30000 and 50000;
+-- ===================================================================
+-- Task 17: Show employees who are NOT from Mumbai
+-- ===================================================================
+   SELECT * from employees where city <> 'Mumbai';
+-- ===================================================================
+-- Task 18: Show unique departments from Bangalore only
+-- ===================================================================
+   SELECT distinct department from employees where city = 'Bangalore';
+-- ====================================================================
+-- Task 19: Show employees whose name ends with 'a'
+-- ====================================================================
+   SELECT * from employees where name like '%a';
+-- ====================================================================
+-- Task 20: Show employees working in either HR or IT
+-- ====================================================================
+   SELECT * from employees where department in ('HR','IT');
+-- ====================================================================
+-- Task 21: Show employees whose salary is not 30000
+-- ====================================================================
+   SELECT * from employees where salary <> 30000;
+-- ====================================================================
+
