@@ -1,4 +1,12 @@
--- ---------------------------------------------------------------
+-- =================================================
+-- SQLBolt Lesson 6: Mutli-table Queries with Joins 
+-- =================================================
+
+-- Table: movies
+-- Columns: id, title, director, year, length_minutes
+-- Table: Boxoffice
+-- Columns: movie_id, rating, Domestic_sales, international_sales
+-- ---------------------------------------------------------------------------------------------------------------------
 --Task 1: Find the domestic and international sales for each movie
 -- ---------------------------------------------------------------------------------------------------------------------
  SELECT m.title, d.domestic_sales,d.international_salesfrom movies as m innner join boxoffice as b on m.id = b.movie_id;
