@@ -78,3 +78,24 @@
 -- Task 20: Find max salary per department where city = 'Bangalore'
 -- ============================================================================================================
    SELECT max(salary) as max_salary,department from employees where city = 'Bangalore' group by(department);
+-- ============================================================================================================
+-- Task 21: Show departments having more than 2 employees
+-- ============================================================================================================
+   SELECT department, count(*) as employee_count from employees group by(department) having count(*) > 1;
+-- ============================================================================================================
+-- Task 22: Show cities where total salary is greater than 1,00,000
+-- ============================================================================================================
+   SELECT city, sum(salary) as total_salary from employees group by(city) having sum(salary) > 100000;
+-- ============================================================================================================
+-- Task 23: Show departments where average salary is less than 45,000
+-- ============================================================================================================
+   SELECT department, avg(salary) as avg_salary from employees group by(department) having avg(salary) < 45000;
+-- ============================================================================================================
+-- Task 24: Show cities where max salary is greater than 50,000
+-- ============================================================================================================
+   SELECT city, max(salary) as max_salary from employees group by(city) having max(salary) > 50000;
+-- ============================================================================================================
+-- Task 25: Show departments having total salary between 60,000 and 120,000
+-- ===============================================================================================================================
+   SELECT department, sum(salary) as total_salary from employees group by(department) having sum(salary) between 60000 and 120000;
+-- ===============================================================================================================================
