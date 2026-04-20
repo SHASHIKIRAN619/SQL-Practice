@@ -7,3 +7,4 @@ This repository contains my SQL learning progress using SQLBolt.
 - Group By queries
 - Order by queries
 - Having clause queries
+- Limit/OffSet
