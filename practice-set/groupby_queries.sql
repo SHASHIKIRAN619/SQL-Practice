@@ -99,3 +99,63 @@
 -- ===============================================================================================================================
    SELECT department, sum(salary) as total_salary from employees group by(department) having sum(salary) between 60000 and 120000;
 -- ===============================================================================================================================
+-- Task 26: Show departments with more than 1 employee
+-- ================================================================================================================================
+   SELECT department,count(*) as employee_count from employees group by(department) having count(*) > 1;
+-- ================================================================================================================================
+-- Task 27: Show cities where total salary is greater than 80,000
+-- ================================================================================================================================
+   SELECT city,sum(salary) as total_dalary from employees group by(city) having sum(salary) > 80000;
+-- ================================================================================================================================
+-- Task 28: Show departments where average salary is greater than 40,000
+-- ================================================================================================================================
+   SELECT department,avg(salary) as avg_salary from employee group by(department) having avg(salary) > 40000;
+-- ================================================================================================================================
+-- Task 29: Show cities where minimum salary is less than 40,000
+-- ================================================================================================================================
+   SELECT city,min(salary) as min_salary from employees group by(city) having min(salary) < 40000;
+-- ================================================================================================================================
+-- Task 30: Show departments where maximum salary is at least 50,000
+-- ================================================================================================================================
+   SELECT department,max(salary) as max_salary from employees group by(department) having max(salary) >=50000;
+-- ================================================================================================================================
+-- Task 31: Show cities having more than 1 employee and total salary > 90,000
+-- ================================================================================================================================
+   SELECT city, count(*) as employee_count from employees group by(city) having count(*) > 1 and sum(salary) > 90000;
+-- =================================================================================================================================
+-- Task 32: Show departments where average salary is between 30,000 and 50,000
+-- =================================================================================================================================
+   SELECT department,avg(salary) as avg_salary from employees group by(department) having avg(salary) between 30000 and 50000;
+-- =================================================================================================================================
+-- Task 33: Show cities where max salary is greater than average salary of that city
+-- =================================================================================================================================
+   SELECT city, max(salary) as max_salary,avg(salary) as avg_salary from employees group by(city) having max(salary) > avg(salary);
+-- =================================================================================================================================
+-- Task 34: Show departments having total salary less than 100,000
+-- =================================================================================================================================
+   SELECT department,sum(salary) as total_salary from employees group by(department) having sum(salary) < 100000;
+-- =================================================================================================================================
+-- Task 35: Show cities where employee count is exactly 2
+-- =================================================================================================================================
+   SELECT city,count(*) as employee_count from employees group by(city) having count(*) = 2;
+-- =================================================================================================================================
+-- Task 36: Show departments where difference between max and min salary is greater than 20,000
+-- ==================================================================================================================================================
+   SELECT department,max(salary) as max_salary,min(salary) as min_salary from employees group by(department) having max(salary) - min(salary) > 20000
+-- ===================================================================================================================================================
+-- Task 37: Show cities where average salary is NOT between 30,000 and 50,000
+-- ==================================================================================================================================
+   SELECT city, avg(salary) as avg_salary from employees group by(city) having avg(salary) not between 30000 and 50000;
+-- =================================================================================================================================
+-- Task 38: Show departments where total salary is divisible by 2 (even number)
+-- =================================================================================================================================
+   SELECT department, sum(salary) as total_salary from employees group by(department) having sum(salary)/2=0;
+-- =================================================================================================================================
+-- Task 39: Show cities where sum of salary is greater than twice the average salary
+-- =================================================================================================================================
+   SELECT city, sum(salary) as total_salary from employees group by(city) having sum(salary) > 2 * avg(salary);
+-- =================================================================================================================================
+-- Task 40: Show departments having more than 1 employee AND avg salary > 40,000
+-- =================================================================================================================================
+   SELECT department,count(*) as employee_count from employees group by(department) having count(*) > 1 and avg(salary) > 40000;
+-- =================================================================================================================================
