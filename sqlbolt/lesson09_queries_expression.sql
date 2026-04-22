@@ -1,4 +1,11 @@
+-- =================================================
+-- SQLBolt Lesson 9:  Queries with expressions 
+-- =================================================
 
+-- Table: movies
+-- Columns: id, title, director, year, length_minutes
+-- Table: Boxoffice
+-- Columns: movie_id, rating, Domestic_sales, international_sales
 -- --------------------------------------------------------------------------------------------
 -- Task 1: List all movies and their combined sales in millions of dollars
 -- -------------------------------------------------------------------------------------------
