@@ -1,8 +1,3 @@
-6. Show employees earning more than their manager
-7. Show employees earning less than their manager
-8. Show employees earning equal to their manager
-9. Show employee name, employee salary, manager name, manager salary
-10. Show employees whose manager earns more than 50,000
 -- =============================================================
 CREATE TABLE employees (
     emp_id INT,
