@@ -1,5 +1,5 @@
 -- =================================================
--- SQLBolt Lesson 8: Null Values  
+-- SQLBolt Lesson 10:  Queries with aggregates (Pt. 1)   
 -- =================================================
 
 -- Table:  Employees
