@@ -1,3 +1,11 @@
+-- =================================================
+-- SQLBolt Lesson 12: Inserting rows
+-- =================================================
+
+-- Table: movies
+-- Columns: id, title, director, year, length_minutes
+-- Table: Boxoffice
+-- Columns: movie_id, rating, Domestic_sales, international_sales
 -- -----------------------------------------------------------------------------------------------------
 -- Task 1: Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
 -- -----------------------------------------------------------------------------------------------------
