@@ -1,5 +1,5 @@
 -- ============================================
--- Practice Set Sql Queries.
+-- Practice-Set Sql Queries.
 -- ============================================
 
 -- Table: Employees
