@@ -8,3 +8,8 @@ This repository contains my SQL learning progress using SQLBolt.
 - Order by queries
 - Having clause queries
 - Limit/OffSet
+- Inner Join
+- Left Join
+- Right Join
+- Full Join
+- Self Join
