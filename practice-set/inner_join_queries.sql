@@ -90,3 +90,60 @@ INSERT INTO orders VALUES
 -- ================================================================================================================================
    SELECT c.name,count(o.order_id) as order_count from customers as c inner join orders as o on c.customer_id = o.customer_id
    group by(c.name) having count(o.order_id) > 1;
+-- ================================================================================================================================
+Tables:- 
+   customers:- customer_id, name;
+   orders:- order_id, customer_id;
+   order_items:- item_id, order_id, product_name, price;
+-- ================================================================================================================================
+                                             --Inner Join With Multiple Tables--
+-- ================================================================================================================================
+-- Task 1: . Show customer name and product names they purchased
+-- ================================================================================================================================
+   SELECT c.name, o.order_id, oi.product_name
+   FROM customers c
+   INNER JOIN orders o
+   ON c.customer_id = o.customer_id
+   INNER JOIN order_items oi
+   ON o.order_id = oi.order_id;
+-- ================================================================================================================================
+-- Task 2: Show customer name and total number of items they purchased
+-- ================================================================================================================================
+   SELECT c.name, COUNT(oi.item_id) AS total_items
+   FROM customers c
+   INNER JOIN orders o
+   ON c.customer_id = o.customer_id
+   INNER JOIN order_items oi
+   ON o.order_id = oi.order_id
+   GROUP BY c.name;
+-- ================================================================================================================================
+-- Task 3: Show order_id and total price of each order
+-- ================================================================================================================================
+   SELECT o.order_id, SUM(oi.price) AS total_price 
+   FROM orders o 
+   INNER JOIN order_items oi 
+   ON o.order_id = oi.order_id 
+   GROUP BY o.order_id;
+-- ===============================================================================================================================
+-- Task 4: Show customer name and total amount spent
+-- ===============================================================================================================================
+   SELECT c.name, SUM(oi.price) AS total_price
+   FROM customers c
+   INNER JOIN orders o
+   ON c.customer_id = o.customer_id
+   INNER JOIN order_items oi
+   ON o.order_id = oi.order_id
+   GROUP BY c.name;
+-- ===============================================================================================================================
+-- Task 5: Show customer who spent the most money
+-- ==============================================================================================================================
+  SELECT c.name, SUM(oi.price) AS total_spent
+  FROM customers c
+  INNER JOIN orders o
+  ON c.customer_id = o.customer_id
+  INNER JOIN order_items oi
+  ON o.order_id = oi.order_id
+  GROUP BY c.name
+  ORDER BY total_spent DESC
+  LIMIT 1;
+-- =============================================================================================================================
