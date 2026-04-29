@@ -147,3 +147,38 @@ Tables:-
   ORDER BY total_spent DESC
   LIMIT 1;
 -- =============================================================================================================================
+-- Task 6: Show customer name and total number of orders placed
+-- =============================================================================================================================
+   SELECT c.name, COUNT(o.order_id) AS total_num_orders
+   FROM customers c
+   INNER JOIN orders o
+   ON c.customer_id = o.customer_id
+   GROUP BY c.name;
+-- =============================================================================================================================
+-- Task 7: Show order_id and number of items in each order
+-- =============================================================================================================================
+   SELECT o.order_id, COUNT(oi.item_id) AS total_items 
+   FROM orders o 
+   INNER JOIN order_items oi 
+   ON o.order_id = oi.order_id 
+   GROUP BY (o.order_id);
+-- ==============================================================================================================================
+-- Task 8: Show orders where total price is greater than 5000
+-- ==============================================================================================================================
+   SELECT o.order_id, SUM(oi.price) AS total_price 
+   FROM orders o 
+   INNER JOIN order_items oi 
+   ON o.order_id = oi.order_id 
+   GROUP BY (o.order_id) 
+   HAVING SUM(oi.price) > 5000;
+-- ==============================================================================================================================
+-- Task 9: Show customer name and total number of products purchased
+-- ==============================================================================================================================
+   SELECT c.name, COUNT(oi.product_name) AS total_num_products 
+   FROM customers c 
+   INNER JOIN orders o 
+   ON c.customer_id = o.customer_id 
+   INNER JOIN order_items oi 
+   ON o.order_id = oi.order_id 
+   GROUP BY (c.name);
+-- ==============================================================================================================================
