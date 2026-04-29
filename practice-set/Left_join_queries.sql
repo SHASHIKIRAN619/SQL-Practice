@@ -89,3 +89,31 @@ INSERT INTO orders VALUES
 -- =================================================================================================================================
    SELECT c.name,sum(o.amount) as total_order_amount from customers as c left join orders as o on c.customer_id = o.customer_id
    group by(c.name) having sum(o.amount) > 5000;
+-- ================================================================================================================================= 
+-- ================================================================================================================================
+                                              --Left Join using Multipke Tables--
+-- ================================================================================================================================
+-- Tables:
+      Customers: customer_id, name;
+      orders: order_id, customer_id;
+      order_items: item_id,order_id,price;
+-- ================================================================================================================================
+--Task 1: Show all customers and their orders and items (include customers with no orders and orders with no items)
+-- ================================================================================================================================
+   SELECT c.customer_id, c.name, o.order_id, oi.item_id, oi.price 
+   FROM customers c 
+   LEFT JOIN orders o 
+   ON c.customer_id = o.customer_id 
+   LEFT JOIN order_items oi 
+   ON o.order_id = oi.order_id;
+-- ================================================================================================================================
+-- Task 2: Show customer name and total amount spent (include customers with no orders → show 0)
+-- ================================================================================================================================
+   SELECT c.name, COALESCE(SUM(oi.price), 0) AS total_amount
+   FROM customers c
+   LEFT JOIN orders o
+   ON c.customer_id = o.customer_id
+   LEFT JOIN order_items oi
+   ON o.order_id = oi.order_id
+   GROUP BY c.name;
+-- ================================================================================================================================
