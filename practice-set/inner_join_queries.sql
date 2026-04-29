@@ -174,7 +174,7 @@ Tables:-
 -- ==============================================================================================================================
 -- Task 9: Show customer name and total number of products purchased
 -- ==============================================================================================================================
-   SELECT c.name, COUNT(oi.product_name) AS total_num_products 
+   SELECT c.name, COUNT(oi.item_id) AS total_num_products 
    FROM customers c 
    INNER JOIN orders o 
    ON c.customer_id = o.customer_id 
