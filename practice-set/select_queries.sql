@@ -105,4 +105,21 @@ INSERT INTO employees VALUES
 -- ====================================================================
    SELECT * from employees where salary <> 30000;
 -- ====================================================================
+-- Task 22: Show employees who work in IT and have salary > 50,000
+-- ====================================================================
+   SELECT * from employees where department = 'IT' and salary > 50000;
+-- ====================================================================
+-- Task 23: Show employees from Bangalore or Mumbai
+-- ===================================================================
+   SELECT * from employees where city in ('Bangalore','Mumbai');
+-- =======================================================================
+-- Task 24: Show employees whose salary is between 30k–50k and are from IT
+-- ===================================================================================
+   SELECT * from employees where salary between 30000 and 50000 and department = 'IT;
+-- ===================================================================================
+-- Task 25: Show employees not in HR department
+-- ===================================================================================
+   SELECT * from employees where department <> 'HR';
+-- ===================================================================================
+
 
