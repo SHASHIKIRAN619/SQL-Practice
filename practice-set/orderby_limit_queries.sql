@@ -101,3 +101,30 @@
 -- Task 25: Show lowest 5 salaries
 -- ===================================================================================================
    SELECT * from employees order by salary asc limit 5;
+-- ===================================================================================================
+-- Task 26: Show top 5 highest paid employees from IT department
+-- ===================================================================================================
+   SELECT * from employees where department = 'IT' order by salary desc limit 5;
+-- ===================================================================================================
+-- Task 27: Show employees from Bangalore sorted by salary (highest first)
+-- ===================================================================================================
+   SELECT * from employees where city = 'Bangalore' order by salary desc;
+-- ===================================================================================================
+-- Task 28: Show departments sorted by total number of employees (highest first)
+-- ==================================================================================================
+   SELECT department,count(*) as total_num_of_employees from employees
+   group by department
+   order by total_num_of_employees desc;
+-- ==================================================================================================
+-- Task 29: Show cities sorted by highest salary in each city
+- ===================================================================================================
+   SELECT city, max(salary) as highest_salary from employees 
+   group by city
+   order by highest_salary desc;
+-- =================================================================================================
+-- Task 30: Show departments sorted by lowest salary in each department
+-- ================================================================================================
+   SELECT department, min(salary) as lowest_salary from employees
+   group by department
+   order by lowest_salary asc;
+-- =================================================================================================
