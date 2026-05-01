@@ -193,3 +193,36 @@
 -- Task 48: Show departments where average salary > 40,000
 -- =================================================================================================================================
    SELECT department, avg(salary) as avg_salary from employees group by department having avg(salary) > 40000;
+-- =================================================================================================================================
+-- Task 49: Find the department that has the second lowest average salary.
+-- =================================================================================================================================
+   SELECT department, avg(salary) as avg_salary from employees group by department order by avg_salary asc limit 1 offset 1;
+-- =================================================================================================================================
+-- Task 50: Find cities where the minimum salary is greater than 30,000.
+-- =================================================================================================================================
+   SELECT city, min(salary) as min_salary from employees group by city having salary > 30000;
+-- =================================================================================================================================
+-- Task 51: Find departments where the maximum salary is less than 80,000
+-- =================================================================================================================================
+   SELECT department, max(salary) as max_salary from employees group by department having max(salary) < 80000;
+-- =================================================================================================================================
+-- Task 52: Find cities where the minimum salary is greater than 30,000.
+-- ================================================================================================================================
+   SELECT city, min(salary) as min_salary from employees group by city having min(salary) > 30000;
+-- ================================================================================================================================
+-- Task 53: Find cities where the difference between max and min salary is greater than 25,000.
+-- ================================================================================================================================
+   SELECT city,max(salary) as max_salary, min(salary) as min_salary from employees 
+   group by city having max(salary) - min(salary) > 25000;
+-- =================================================================================================================================
+-- Task 54: Find departments where the total salary is greater than 200,000.
+-- =================================================================================================================================
+   SELECT department, sum(salary) as total_salary from employees group by department having sum(salary) > 200000;
+-- =================================================================================================================================
+-- Task 55: Find cities where the average salary is less than 45,000.
+- ==================================================================================================================================
+   SELECT city, avg(salary) as avg_salary from employees group by city having avg(salary) < 45000;
+-- =================================================================================================================================
+-- Task 56: Find departments where the employee count is an even number.
+-- =================================================================================================================================
+   SELECT department, count(*) as employee_count from employees group by department having mod(count(*),2) = 0;
