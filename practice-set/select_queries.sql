@@ -115,11 +115,45 @@ INSERT INTO employees VALUES
 -- =======================================================================
 -- Task 24: Show employees whose salary is between 30k–50k and are from IT
 -- ===================================================================================
-   SELECT * from employees where salary between 30000 and 50000 and department = 'IT;
+   SELECT * from employees where salary between 30000 and 50000 and department = 'IT';
 -- ===================================================================================
 -- Task 25: Show employees not in HR department
 -- ===================================================================================
    SELECT * from employees where department <> 'HR';
--- ===================================================================================
-
-
+-- ====================================================================================================
+-- Task 26: Show employees whose salary is greater than 30,000 and less than 60,000 (don’t use BETWEEN)
+-- ====================================================================================================
+   SELECT * from employees where salary > 30000 and salary < 60000;
+-- ====================================================================================================
+-- Task 27: Show employees not working in IT or HR
+-- ====================================================================================================
+   SELECT * from employees where department not in ('IT','HR');
+-- ====================================================================================================
+-- Task 28: Show employees whose city is neither Bangalore nor Mumbai
+-- ====================================================================================================
+    SELECT * from employees where city not in ('Bangalore', 'Mumbai');
+-- ====================================================================================================
+-- Task 29: Show employees whose name starts with 'A' and ends with 'a'
+-- ====================================================================================================
+    SELECT * from employees where name like 'A%a';
+-- ====================================================================================================
+-- Task 30: Show employees whose name contains 'ar'
+-- ====================================================================================================
+    SELECT * from employees where name like '%a%';
+-- ====================================================================================================
+-- Task 31: Show employees whose name starts with any vowel (A, E, I, O, U)
+-- ====================================================================================================
+    SELECT * from employees where name like 'A' or name like 'E' or name like 'I' or name like 'O' 
+    or name like 'U';
+-- ====================================================================================================
+-- Task 32: Show employees whose name does NOT contain 'a'
+-- ====================================================================================================
+    SELECT * from employees where name not like '%a%';
+-- ====================================================================================================
+-- Task 33: Show employees sorted by salary (descending) and for same salary sort by name (ascending)
+-- ====================================================================================================
+   SELECT * from employees order by salary desc, name asc;
+-- ====================================================================================================
+-- Task 34: how employees sorted by length of name
+-- ====================================================================================================
+    SELECT * from employees order by length(name) asc;
