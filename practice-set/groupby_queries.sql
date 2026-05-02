@@ -226,3 +226,37 @@
 -- Task 56: Find departments where the employee count is an even number.
 -- =================================================================================================================================
    SELECT department, count(*) as employee_count from employees group by department having mod(count(*),2) = 0;
+-- =================================================================================================================================
+-- Task 57: Find cities where the total salary is divisible by 5.
+-- =================================================================================================================================
+   SELECT city, sum(salary) as total_salary from employees group by city having mod(sum(salary),5)= 0;
+-- =================================================================================================================================
+-- Task 58: Find departments where the average salary is greater than 35,000 AND less than 60,000.
+-- =================================================================================================================================
+   SELECT department, avg(salary) as avg_salary from employees group by department having avg(salary) between 35000 and 60000;
+-- =================================================================================================================================
+-- Task 59: Find cities where the maximum salary is exactly 50,000.
+-- =================================================================================================================================
+   SELECT city, max(salary) as maX_SALARY FROM EMPLOYEES group by city having max(salary) = 50000;
+-- =================================================================================================================================
+-- Task 60: Find departments where the minimum salary is exactly 25,000.
+-- =================================================================================================================================
+   SELECT department, min(salary) as min_salary from employees group by department having min(salary) = 25000;
+-- =================================================================================================================================
+-- Task 61: Find cities where the number of employees is greater than 3.
+-- =================================================================================================================================
+   SELECT city,count(*) as num_of_employees from employees group by city having count(*) > 3;
+-- =================================================================================================================================
+-- Task 62: Find departments where the sum of salaries is less than 150,000 AND greater than 50,000.
+-- =================================================================================================================================
+   SELECT department, sum(salary) as sum_of_salary from employees group by department having sum(salary) < 150000 
+   and sum(salary) > 50000;
+-- =================================================================================================================================
+-- Task 63: Find cities where the difference between max and min salary is exactly 10,000.
+-- =================================================================================================================================
+   SELECT city, max(salary) as max_salary, min(salary) as min_salary from employees
+   group by city having max(salary) - min(salary) = 10000;
+-- =================================================================================================================================
+-- Task 64: Find departments where the maximum salary is divisible by 2.
+-- =================================================================================================================================
+   SELECT department, max(salary) as max_salary from employees group by department having mod(max(salary),2) = 0;
