@@ -128,3 +128,30 @@
    group by department
    order by lowest_salary asc;
 -- =================================================================================================
+-- Task 31: Show average salary of each city sorted from highest to lowest
+-- ================================================================================================
+   SELECT avg(salary) as avg_saalry, city from employees
+   group by city
+   order by avg_salary desc;
+-- ================================================================================================
+-- Task 32: Show total salary paid in each department, highest first
+-- ================================================================================================
+   SELECT sum(salary) as total_salary, department from employees
+   group by department
+   order by total_salary desc;
+-- ===============================================================================================
+-- Task 33: Show top 3 cities with highest total salary
+-- ===============================================================================================
+   SELECT sum(salary) as total_salary, city from employees
+   group by city
+   order by total_salary desc 
+   limit 3;
+-- ===============================================================================================
+-- Task 34: Show employees sorted by name length (shortest first)
+-- ===============================================================================================
+   SELECT * from employees order by length(name) asc;
+-- ==============================================================================================
+-- Task 35: Show employees sorted by salary, but only display name and salary
+-- ==============================================================================================
+   SELECT name, salary from employees order by salary asc;
+
