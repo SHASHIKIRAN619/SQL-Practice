@@ -154,4 +154,5 @@
 -- Task 35: Show employees sorted by salary, but only display name and salary
 -- ==============================================================================================
    SELECT name, salary from employees order by salary asc;
+-- ==============================================================================================
 
