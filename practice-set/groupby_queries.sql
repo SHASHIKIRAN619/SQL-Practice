@@ -260,3 +260,4 @@
 -- Task 64: Find departments where the maximum salary is divisible by 2.
 -- =================================================================================================================================
    SELECT department, max(salary) as max_salary from employees group by department having mod(max(salary),2) = 0;
+-- =================================================================================================================================
