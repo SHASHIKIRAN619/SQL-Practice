@@ -64,4 +64,5 @@
 -- ====================================================================================
    SELECT name, COALESCE(city,'Unknown') as city, COALESCE(department,'Not Asigned') 
    as department from employees;
+-- ===================================================================================
 
