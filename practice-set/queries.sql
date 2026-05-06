@@ -109,6 +109,24 @@
    SELECT city,min(salary) as min_salary from employees group by city;
 -- ============================================================================================
 -- Task 26: Count number of employees in each department.
--- ============================================================================================
+-- ==============================================================================================
+   SELECT department_id, count(emp_id) as num_of_employees from employees group by department_id;
+-- ==============================================================================================
+-- Task 27: Count employees in each city where salary is not NULL.
+-- ====================================================================================================
+   SELECT city, count(emp_id) as employees_count from employees where salary is not null group by city;
+-- ====================================================================================================
+-- Task 28: Find total salary for each department.
+-- ====================================================================================================
+   SELECT department_id,sum(salary) as total_salary from employees group by department_id;
+-- ====================================================================================================
+-- Task 29: Find average age of employees in each city.
+-- ====================================================================================================
+   SELECT city, avg(age) as avg_age from employees group by city;
+-- ====================================================================================================
+-- Task 30: Count how many employees have the same salary
+-- ====================================================================================================
+   SELECT salary, count(emp_id) as employee_count from employees group by salary;
+
    
    
