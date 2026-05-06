@@ -88,5 +88,27 @@
 -- ============================================================================================
    SELECT DISTINCT department_id AS dept_id FROM employees;
 -- ============================================================================================
-
+-- Task 21: Count total number of employees in each city.
+-- ============================================================================================
+   SELECT count(emp_id) as total_num_of_employees, city from employees group by city;;
+-- ============================================================================================
+-- Task 22: Find total salary paid in each city.
+-- ============================================================================================
+   SELECT city, sum(salary) as total_salary from employees group by city;
+-- ============================================================================================
+-- Task 23: Find average salary in each department.
+-- ============================================================================================
+   SELECT department_id, avg(salary) as avg_salary from employees group by department_id;
+-- ============================================================================================
+-- Task 24: Find maximum salary in each department.
+-- ============================================================================================
+   SELECT department_id, max(salary) as max_salary from employees group by department_id;
+-- ============================================================================================
+-- Task 25: Find minimum salary in each city.
+-- ============================================================================================
+   SELECT city,min(salary) as min_salary from employees group by city;
+-- ============================================================================================
+-- Task 26: Count number of employees in each department.
+-- ============================================================================================
+   
    
