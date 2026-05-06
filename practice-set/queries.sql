@@ -67,5 +67,26 @@
 -- Task 15: Display unique project names from the projects table.
 -- ============================================================================================
    SELECT distinct project_name from projects;
+-- ============================================================================================
+-- Task 16: Display unique cities where employees exist (no duplicates).
+-- ============================================================================================
+   SELECT DISTINCT city FROM employees WHERE emp_id IS NOT NULL;
+-- ============================================================================================
+-- Task 17: Display all salaries without duplicates and rename column as unique_salary.
+-- ============================================================================================
+   SELECT DISTINCT salary AS unique_salary FROM employees;
+-- ============================================================================================
+-- Task 18: Display unique combinations of emp_id and project_name from projects.
+-- ============================================================================================
+   SELECT DISTINCT emp_id, project_name FROM projects;
+-- ============================================================================================
+-- Task 19: Display unique names from employees (even if duplicates exist in future).
+-- ============================================================================================
+   SELECT DISTINCT name FROM employees;
+-- ============================================================================================
+-- Task 20: Display unique department IDs but rename column as dept_id.
+-- ============================================================================================
+   SELECT DISTINCT department_id AS dept_id FROM employees;
+-- ============================================================================================
 
    
