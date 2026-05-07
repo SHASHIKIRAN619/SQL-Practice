@@ -148,5 +148,34 @@
 -- ==============================================================================================================
    SELECT department_id, min(age) as min_age from employees group by department_id;
 -- ==============================================================================================================
-   
-   
+-- Task 36: Display employee names along with their department names.
+-- ==============================================================================================================
+   SELECT e.name, d.department_name from employees
+   e inner join departments d 
+   on e.department_id = d.department_id;
+-- ==============================================================================================================
+-- Task 37: Display all employee names and their project names.
+-- ==============================================================================================================
+   SELECT e.name, p.project_name from employees e
+   inner join projects p 
+   on e.emp_id = p.emp_id;
+-- =============================================================================================================
+-- Task 38: Display employee name, city, and department name.
+-- ============================================================================================================
+   SELECT e.name, e.city, d.department_name from employees e
+   inner join departments d 
+   on e.department_id = d.department_id;
+-- ============================================================================================================
+-- Task 39: Display project name and employee salary.
+-- ============================================================================================================
+   SELECT p.project_name, e.salary as employee_salary from projects p
+   inner join employees e 
+   on p.emp_id = e.emp_id;
+ -- ===========================================================================================================  
+-- Task 40: Display all employees who belong to the HR department.
+-- ========================================================================================================
+   SELECT e.emp_id, e.name, d.department_name from employees e
+   inner join departments d 
+   on e.department_id = d.department_id
+   where d.department_name = 'HR';
+-- ===========================================================================================================
