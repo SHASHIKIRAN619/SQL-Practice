@@ -127,6 +127,26 @@
 -- Task 30: Count how many employees have the same salary
 -- ====================================================================================================
    SELECT salary, count(emp_id) as employee_count from employees group by salary;
-
+-- ====================================================================================================
+-- Task 31: Display city and total salary, but rename total as total_salary.
+-- ====================================================================================================
+   SELECT city, sum(salary) as total_salary from employees group by city;
+-- ====================================================================================================
+-- Task 32: Display department_id and average salary as avg_salary.
+-- ====================================================================================================
+   SELECT department_id, avg(salary) as avg_salary from employees group by department_id;
+-- ====================================================================================================
+-- Task 33: Find number of employees in each (city, department_id) combination.
+-- ==========================================================================================================
+   SELECT city, department_id, count(emp_id) as number_of_employees from employees group by city, department_id;
+-- ==============================================================================================================
+-- Task 34: Find maximum salary in each city.
+-- ==============================================================================================================
+   SELECT city, max(salary) as max_salary from employees group by city;
+-- ==============================================================================================================
+-- Task 35: Find minimum age in each department.
+-- ==============================================================================================================
+   SELECT department_id, min(age) as min_age from employees group by department_id;
+-- ==============================================================================================================
    
    
