@@ -179,3 +179,41 @@
    on e.department_id = d.department_id
    where d.department_name = 'HR';
 -- ===========================================================================================================
+-- Task 41: Display employee name, department name, and project name.
+-- ==========================================================================================================
+   SELECT e.name,d.department_name,p.project_name
+   from employees e
+  inner join departments d
+  on e.department_id = d.department_id
+  inner join projects p
+  on e.emp_id = p.emp_id;
+-- =========================================================================================================
+-- Task 42: Display project name along with employee city.
+-- ========================================================================================================
+   SELECT p.project_name, e.city 
+   from projects p
+   inner join employees e
+   on p.emp_id = e.emp_id;
+-- ========================================================================================================
+-- Task 43: Display employee name and department name where salary is greater than 50000.
+-- ========================================================================================================
+   SELECT e.name, d.department_name 
+   from employees e
+   inner join departments d
+   on e.department_id = d.department_id 
+   where salary > 50000;
+-- ========================================================================================================
+-- Task 44: Display employee name and project name for employees from Bangalore.
+-- =======================================================================================================
+   SELECT e.name, p.project_name, e.city 
+   from employees e
+  inner join projects p
+  on e.emp_id = p.emp_id
+  where e.city = 'Bangalore';
+-- =======================================================================================================
+-- Task 45: Display all employees working on projects.
+-- =======================================================================================================
+  SELECT e.name, p.project_name
+  from employees e
+  inner join projects p
+  on e.emp_id = p.emp_id;
