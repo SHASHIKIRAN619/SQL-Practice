@@ -218,3 +218,38 @@
   inner join projects p
   on e.emp_id = p.emp_id;
 -- =========================================================================================================
+-- Task 46: Display all employees and their department names, including employees without departments.
+-- =========================================================================================================
+   SELECT e.name,d.department_name
+   FROM employees e
+   LEFT JOIN departments d
+   on e.department_id = d.department_id;
+-- =========================================================================================================
+-- Task 47: Display all employees and their project names, including employees without projects.
+-- ========================================================================================================
+   SELECT e.name, p.project_name
+  FROM employees e
+  LEFT JOIN projects p
+  ON e.emp_id = p.emp_id;
+-- ========================================================================================================
+-- Task 48: Display all departments and employees in them, including departments with no employees.
+-- ========================================================================================================
+   SELECT d.department_id, e.name 
+   FROM departments d
+   LEFT JOIN employees e
+   ON d.department_id = e.department_id;
+-- ========================================================================================================
+-- Task 49: Display all projects and employee names, including projects without employees.
+-- ========================================================================================================
+   SELECT p.project_name, e.name
+   FROM projects p
+   LEFT JOIN employees e
+   ON p.emp_id = e.emp_id;
+-- =======================================================================================================
+-- Task 50: Display employee name and department name, even if department is NULL.
+-- ======================================================================================================
+   SELECT e.name, d.department_name
+   FROM employees e
+   LEFT JOIN departments d
+   ON e.department_id = d.department_id;
+-- ======================================================================================================
