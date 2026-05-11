@@ -288,3 +288,40 @@
    GROUP BY salary
    HAVING COUNT(emp_id) > 1;
 -- ====================================================================================================================================
+-- Task 56: Display all employees and their department names.
+-- ====================================================================================================================================
+   SELECT e.name, d.department_name
+   FROM employees e
+   LEFT JOIN departments d
+   ON e.department_id = d.department_id;
+-- ====================================================================================================================================
+-- Task 57: Display employee names and project names only for employees who have projects.
+-- =====================================================================================================================================
+   SELECT e.name, p.project_name
+   FROM employees e
+   INNER JOIN projects p
+   ON e.emp_id = p.emp_id;
+-- =====================================================================================================================================
+-- Task 58: Display all departments along with employee names.
+-- ====================================================================================================================================
+   SELECT d.department_name, e.name
+   FROM departments d
+   LEFT JOIN employees e
+   ON d.department_id = e.department_id;
+-- =====================================================================================================================================
+-- Task 59: Display employee names, project names, and department names.
+-- ==================================================================================================================================
+   SELECT e.name, p.project_name, d.department_name
+   FROM employees e
+   INNER JOIN projects p
+   ON e.emp_id = p.emp_id
+   INNER JOIN departments d
+   ON e.department_id = d.department_id;
+-- =====================================================================================================================================
+-- Task 59: Display all employees even if they are not assigned to any project.
+-- =====================================================================================================================================
+   SELECT e.name, p.project_name
+   FROM employees e
+   LEFT JOIN projects p
+   ON e.emp_id = p.emp_id;
+-- =====================================================================================================================================
