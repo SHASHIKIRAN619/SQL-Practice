@@ -1,5 +1,5 @@
 -- ============================================
--- Practice-Set Sql Queries.
+-- Practice-Set SQL Queries.
 -- ============================================
 
 -- Table: Employees,departments,projects
