@@ -325,3 +325,38 @@
    LEFT JOIN projects p
    ON e.emp_id = p.emp_id;
 -- =====================================================================================================================================
+-- Task 60: Display all projects along with employee names.
+-- =================================================================================================================================
+   SELECT p.project_name, e.name
+   FROM projects p
+   LEFT JOIN employees e
+   ON p.emp_id = e.emp_id;
+-- ==================================================================================================================================
+-- Task 61: Display employee names and department names only for employees who have departments assigned.
+-- =================================================================================================================================
+   SELECT e.name, d.department_name
+   FROM employees e
+   INNER JOIN departments d
+   ON e.department_id = d.department_id;
+-- ====================================================================================================================================
+-- Task 62: Display all employees and project names, including employees without projects.
+-- =====================================================================================================================================
+   SELECT e.name, p.project_name
+   FROM employees e
+   LEFT JOIN projects p
+   ON e.emp_id = p.emp_id;
+-- ====================================================================================================================================
+-- Task 63: Display all departments even if no employees belong to them.
+-- ====================================================================================================================================
+   SELECT d.department_name, e.name
+   FROM departments d
+   LEFT JOIN employees e
+   ON d.department_id = e.department_id;
+-- ====================================================================================================================================
+-- Task 64: Display employee names, cities, and project names only for employees working on projects.
+-- ====================================================================================================================================
+   SELECT e.name, e.city, p.project_name
+   FROM employees e
+   INNER JOIN projects p
+   ON e.emp_id = p.emp_id;
+-- =====================================================================================================================================
